@@ -1,4 +1,7 @@
+
+
 CACHE MANIFEST
+
 
 CACHE:
 ./files.json
@@ -18,8 +21,10 @@ CACHE:
 ./fonts/font-awesome-4.6.2/css/font-awesome.css
 ./fonts/font-awesome-4.6.2/fonts/FontAwesome.otf
 
+
 NETWORK:
 *
 
 SETTINGS:
 prefer-online
+
