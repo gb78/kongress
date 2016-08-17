@@ -9,7 +9,7 @@ function atualizaJson(){
 	var ret;
 	$('#config .console').html('Atualizando JSON...');
 	$.ajax({
-		url: 'http://n3p0.net/kongress/site/indexJson',
+		url: 'https://n3p0.net/kongress/site/indexJson',
 		error: function(){
 			$('#config .console').html('erro');
 			ret=false;
