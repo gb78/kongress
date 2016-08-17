@@ -1,0 +1,36 @@
+*,*:before,*:after
+{
+  box-sizing: border-box;
+}
+
+.left{float:left;}
+.center{margin:0 auto;}
+.right{float:right;}
+
+.rel{position:relative;}
+.abs{position:absolute;}
+
+.full{width:100%;display:block;clear:both;}
+
+.hidden{display:none;}
+
+.tal{text-align:left;}
+.tac{text-align:center;}
+.tar{text-align:right;}
+.taj{text-align:justify;}
+
+table {width:100%;border-spacing:0;border-collapse:collapse;}
+table,td,th{border:0;padding:5px;}
+table tr th{background:#139;color:#eee; text-align:center;}
+table tr td{border-bottom: 1px solid #bbb;vertical-align:top;}
+
+table tr td:first-child {text-align:right;}
+table tr td:first-child p{float:right;font-size:0.7em;margin:0;}
+table tr td:first-child::first-line{float:right;font-style:normal;font-size:1em}
+
+
+table tr:nth-child(even) {background: #eee}
+table tr:nth-child(odd) {background: #fff}
+
+
+hr{display:block;clear:both;border:1px dashed #ddd;}

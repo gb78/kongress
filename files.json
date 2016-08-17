@@ -1,0 +1,16 @@
+var files = [
+  "index.html",
+  "base.css",
+  "index.css",
+  "manifest.json",
+  "img/enegep.png",
+  "img/enegep2.png",
+  "img/icon.png",
+  "js/install.js",
+  "js/main.js",
+  "js/jquery-3.1.0.min.js",
+  "fonts/Prompt/Prompt-Medium.ttf",
+  "fonts/Prompt/Prompt-MediumItalic.ttf",
+  "fonts/font-awesome-4.6.2/css/font-awesome.css",
+  "fonts/font-awesome-4.6.2/fonts/FontAwesome.otf"
+];
