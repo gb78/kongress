@@ -11,6 +11,7 @@ function atualizaJson(){
 	jQuery.support.cors = true;
 	$.ajax({
 		type:'GET',
+		dataType: 'json',
 		crossDomain:true,
 		url: 'https://hostx.hostseguro.com/~nepopo/_n3p0/kongress/json/atividade.json',
 		error: function(){
@@ -24,7 +25,7 @@ function atualizaJson(){
 			atualizaViews();
 			ret=true;
 		},
-		timeout: 10000
+		timeout: 25000
 	});
 	return ret;
 }
