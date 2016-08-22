@@ -9,6 +9,8 @@ function atualizaJson(){
 	var ret;
 	$('#config .console').html('Atualizando JSON...');
 	$.ajax({
+		type:'GET',
+		crossDomain:true,
 		url: 'https://hostx.hostseguro.com/~nepopo/_n3p0/kongress/json/atividade.json',
 		error: function(){
 			$('#config .console').html('erro');
