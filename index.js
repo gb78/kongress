@@ -8,6 +8,7 @@ function botaoVoltar() {pp(voltar);}
 function atualizaJson(){
 	var ret;
 	$('#config .console').html('Atualizando JSON...');
+	jQuery.support.cors = true;
 	$.ajax({
 		type:'GET',
 		crossDomain:true,
