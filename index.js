@@ -20,7 +20,7 @@ function atualizaJson(){
 		},
 		success: function(data){
 			storage.setItem('json', JSON.stringify(data));
-			$('#config .console').append('concluido <br><textarea>'+JSON.stringify(data, null, 2);+'</textarea>');
+			$('#config .console').append('concluido <br><textarea>'+JSON.stringify(data, null, 2)+'</textarea>');
 			$('#AtualizaJsonMsg').hide();
 			atualizaViews();
 			ret=true;
