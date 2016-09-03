@@ -19,8 +19,8 @@ function atualizaJson(){
 			ret=false;
 		},
 		success: function(data){
-			storage.setItem('json', data);
-			$('#config .console').append('concluido <br><textarea>'+data+'</textarea>');
+			storage.setItem('json', JSON.stringify(data));
+			$('#config .console').append('concluido <br><textarea>'+JSON.stringify(data, null, 2);+'</textarea>');
 			$('#AtualizaJsonMsg').hide();
 			atualizaViews();
 			ret=true;
@@ -68,9 +68,9 @@ function inicializa(){
 	}
 
 	$('#abertura').fadeIn(1500);
-	var checktimer=setInterval(function(){ 
-		
-		$('#thumbs').fadeToggle(); 
+	var checktimer=setInterval(function(){
+
+		$('#thumbs').fadeToggle();
 
 var options={icon: 'img/icon.png', body: 'Saída'};
 
@@ -178,7 +178,7 @@ function pegaHora(e){
 }
 
 $(function(){
-	
+
 	inicializa();
 
 });
