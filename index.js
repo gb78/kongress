@@ -13,7 +13,7 @@ function atualizaJson(){
 		type:'GET',
 		dataType: 'json',
 		crossDomain:true,
-		url: 'https://hostx.hostseguro.com/~nepopo/_n3p0/kongress/json/atividade.json',
+		url: 'https://hostx.hostseguro.com/~nepopo/_n3p0/kongress/json/',
 		error: function(){
 			$('#config .console').html('erro');
 			ret=false;
