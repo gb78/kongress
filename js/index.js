@@ -81,7 +81,15 @@ function inicializa(){
 			$.parseJSON(storage.getItem('favoritos')),
 			function(el) { return el }
 		);
+	}
 
+	if (!storage['qualificacao']){
+		storage.setItem('qualificacao','{}');
+	}else{
+		qualifications = $.map(
+			$.parseJSON(storage.getItem('qualificacao')),
+			function(el) { return el }
+		);
 	}
 
 /*
@@ -133,5 +141,3 @@ var app = {
 };
 
 app.initialize();
-
-inicializa();
