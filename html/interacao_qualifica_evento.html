@@ -1,0 +1,52 @@
+<div class=pad10>
+	
+	<h3>Avaliação geral</h3>
+
+
+<form id=qualificaEventoForm>
+
+	<input type=hidden id=qeIDE name=ide value='3'>
+	<input type=hidden id=qeIDA name=ide value='0'>
+
+Como soube do ENEGEP?
+	<textarea id=qeComoSoube rows=2 class=full name=comoSoube></textarea>
+
+<h4>É seu primeiro ENEGEP?</h4>
+	<input type=radio id=primeiroS name=primeiro value=S><label for=primeiroS>Sim</label>
+	<input type=radio id=primeiroN name=primeiro value=N><label for=primeiroN>Não</label>
+
+<h4>Avaliação Geral do evento:</h4>
+		<select id=selGeral name=geral class=stars>
+		<option value=1 data-html='Muito Insatisfeito'>1</option>
+		<option value=2 data-html='Insatisfeito'>2</option>
+		<option value=3 data-html='Razoável'>3</option>
+		<option value=4 data-html='Satisfeito'>4</option>
+		<option value=5 data-html='Muito Satisfeito'>5</option>
+		</select>
+
+<h4>Avaliação da programação científica:</h4>
+		<select id=selCientifica name=cientifica class=stars>
+		<option value=1 data-html='Muito Insatisfeito'>1</option>
+		<option value=2 data-html='Insatisfeito'>2</option>
+		<option value=3 data-html='Razoável'>3</option>
+		<option value=4 data-html='Satisfeito'>4</option>
+		<option value=5 data-html='Muito Satisfeito'>5</option>
+		</select>
+
+<div class='full height1'></div>
+<h4>Avaliação da programação social:</h4>
+		<select id=selSocial name=social class=stars>
+		<option value=1 data-html='Muito Insatisfeito'>1</option>
+		<option value=2 data-html='Insatisfeito'>2</option>
+		<option value=3 data-html='Razoável'>3</option>
+		<option value=4 data-html='Satisfeito'>4</option>
+		<option value=5 data-html='Muito Satisfeito'>5</option>
+		</select>
+
+</form>
+
+</div>
+
+<button onclick=pp('interacao')>Enviar</button>
+<button class=hidden1 onclick=qualificaEvento()>valores</button>
+<textarea class=hidden1 width=100% rows=10 id=interacaoConsole>aaa</textarea>

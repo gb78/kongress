@@ -1,0 +1,46 @@
+<h3>Qualificação</h3>
+<div class='atividadeNome'></div>
+
+<form id=qualificaAtividadeForm>
+
+	<input type=hidden id=ide name=ide value='3'>
+	<input type=hidden id=ida name=ida value=''>
+
+<h3>De modo geral, o que achou da atividade?</h3>
+		<select id=selGeral name=geral class=stars>
+		<option value=1>1</option>
+		<option value=2>2</option>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+		</select>
+
+<h3>Relevância:</h3>
+		<select id=selRelevancia name=relevancia class=stars>
+		<option value=1>1</option>
+		<option value=2>2</option>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+		</select>
+
+<h3>Gostaria de ver sobre esse tema novamente?</h3>
+		<select id=selRever name=novamente class=stars>
+		<option value=1>1</option>
+		<option value=2>2</option>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+		</select>
+
+<h3>Tem alguma sugestão ou opinião? (opcional)</h3>
+<textarea width=100% rows=3 id=opiniao></textarea>
+
+
+</form>
+
+<button class=right onclick=pp('interacao')>Enviar</button>
+<p class=full>&nbsp;</p>
+
+<button class=hidden1 onclick=qualificaAtividade()>valores</button>
+<textarea class=hidden1 width=100% rows=10 id=interacaoConsole>aaa</textarea>

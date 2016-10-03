@@ -1,42 +1,30 @@
-<!doctype html>
-<html lang="pt-br" Xmanifest="appcache.manifest">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Kongress</title>
-	<meta name="description" content="Kongress">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<link rel="stylesheet" type="text/css" href="base.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.6.2/css/font-awesome.css">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta http-equiv="Content-Security-Policy"
+        content="
+		 default-src 'self' data: gap: file: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline' ;
+         connect-src *;
+         style-src 'self' 'unsafe-inline';
+         media-src *"
+         >
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-	<link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.6.2/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="js/jQuery/jquery-bar-rating-master/themes/fontawesome-stars.css">
+		<link rel="stylesheet" type="text/css" href="js/jQuery/jquery-bar-rating-master/themes/bars-reversed.css">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="img/icon.png">
-    <meta name="theme-color" content="#F77F00">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Shopping">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon-precomposed" href="img/icon.png">
-
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="img/icon.png">
-    <meta name="msapplication-TileColor" content="#F77F00">
-
-    <script>
-    if (window.location.protocol != "https:" && window.location.hostname == "gb78.github.io")
-        window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-    </script>
-
-</head>
-<body>
+        <title>Kongress</title>
+    </head>
+    <body>
 
 	<header>
-	<div class='left tal' onclick=pp('config')>
+	<div class='left tal' onclick=pp('config') style='font-size:120%;padding:5px 0 0 5px;'>
 		<i class='fa fa-bars'></i> Kongress
 	</div>
 
@@ -46,58 +34,133 @@
 
 	</header>
 
-
 <content>
+
 <div id=content class=rel style='width:100%;height:100%;overflow:hidden;'>
 
-	<div id=console class='hidden rel' >console</div>
-	<div id=result  class='hidden rel'  >result</div>
+<div id=console class='hidden rel' >console</div>
+<div id=result  class='hidden rel'  >result</div>
 
-	<div id=abertura class='rel center tac hidden'>
-		<img src=img/enegep2.png vspace=5 hspace=5>
-		<div id=AtualizaJsonMsg class=pad10 style='color:red;'>É necessário baixar as informações do evento (requer conexão com a internet)
-		<br>
-		<button onclick=atualizaJson()><i class='fa fa-refresh'></i>Baixar agora</button>
-		</div>
-		<p>Contribuições da Engenharia de Produção para Melhores Práticas de Gestão e Modernização do Brasil</p>
-		JOÃO PESSOA/PB - BRASIL	
-	</div>
+<div id=abertura class='rel center tac hidden full'>
+	<img id=cartaz src=img/cartaz_800.jpg>
 
+	<div id=AtualizaJsonMsg class=pad10 style='color:red;'>É necessário baixar as informações do evento (requer conexão com a internet)
+	 <br>
+	 <button onclick=atualizaJsons()><i class='fa fa-refresh'></i>Baixar agora</button>
+	 </div>
 
-	<div id=prog class='programacao pagina' style='width:100%;'>Programação Completa</div>
+	<p>Contribuições da Engenharia de Produção para Melhores Práticas de Gestão e Modernização do Brasil</p>
+	JOÃO PESSOA/PB - BRASIL
+	<div class=full>&nbsp;</div>
+</div>
 
-	<div id=config class='pagina' >
-		<h3>Configuraçãoes</h3>
-		<fieldset><legend>Não clique em nada</legend>
-			<button onclick=atualizaJson()><i class='fa fa-refresh'></i>Json</button>
-			<button onclick=zeraJson()>Zera Json</button>
-			<button onclick=checaJson()>Checa Json</button>
+	<div id=config class='pagina pad10' >
+		<div style='padding-left:10px;'>
+			<img src=img/header.png style='width:90%; max-width:300px;'>
 			<hr>
-			<button onclick=pegaHora(this)>hora</button>
-		</fieldset>
-		<div class=console></div>
+			<div onclick=atualizaJsons()><i class='fa fa-refresh'></i>&nbsp; Sincronizar dados</div>
+			<div id=atualizaJsonsConsole></div>
+			<hr>
+			<div onclick=pp('prog')><i class='fa fa-calendar'></i> &nbsp; Programação</div>
+			<hr>
+			<div onclick=pp('informacoes')><i class='fa fa-info-circle'></i> &nbsp; Informações Úteis</div>
+			<hr>
+			<div onclick=pp('ocorrencias')><i class='fa fa-exclamation-triangle'></i> &nbsp; Atualizações</div>
+			<hr>
+			<div onclick=abreFavoritos()><i class='fa fa-star'></i> &nbsp; Favoritos</div>
+			<hr>
+			<small>&copy; 2016 Kongress</small>
+		</div>
+			<div class=hidden>
+				<button onclick=zeraJson()>Zera Json</button>
+				<button onclick=checaJson()>Checa Json</button>
+				<hr>
+				<button onclick=$(this).html(pegaHora())>hora</button>
+				fa-info-circle
+				<div class=console></div>
+			</div>
 	</div>
 
-	<div id=interacao class='pagina'>
-		Interação
+	<div id=prog class='programacao pagina'>
+		Programação Completa
 	</div>
 
+
+	<div id=favoritos class='programacao pagina'></div>
+	<div id=atividade class='programacao pagina'></div>
+	<div id=atividadeSub class='programacao pagina'></div>
+
+
+	<div id=informacoes class='pagina pad10'>
+		<h3 class=left>Informações Úteis</h3>
+		<div class='right pad10' onclick="atualizaJson('informacoes')">
+			<i class='informacoesUpdater fa fa-2x fa-refresh'></i>
+		</div>
+		<div class=conteudo full></div>
+	</div>
+
+	<div id=informacoesDetalhes class='pagina'>&nbsp;</div>
+
+	<div id=palestrantes class='pagina pad10'>
+		<h3 class=left>Palestrantes</h3>
+		<div class='right pad10' onclick="atualizaJson('palestrantes')">
+			<i class='palestrantesUpdater fa fa-2x fa-refresh'></i>
+		</div>
+		<div class=conteudo full></div>
+	</div>
+
+	<div id=palestrantesDetalhes class='pagina'></div>
+
+
+	<div id=ocorrencias class='pagina pad10'>
+		<h3 class=left>Atualizações</h3>
+		<div class='right pad10' onclick="atualizaJson('ocorrencias')">
+			<i class='ocorrenciasUpdater fa fa-2x fa-refresh'></i>
+		</div>
+		<div class='conteudo full'>
+		</div>
+	</div>
+
+
+	<div id=interacao class='pagina pad10'>
+		<h3>Interação</h3>
+		As atividades (e o próprio evento) podem ser avaliados de forma bem rápida.
+		Os formulários ficam disponíveis após a realização de cada atividade, e basta
+		clicar no botão localizado na respectiva página.
+		<h3>Importante:</h3>
+		* É necessário cadastrar seu nome e e-mail no primeiro acesso.
+		<br>
+		* Se não estiver conectado no momento da avaliação, os dados ficarão salvos no seu celular até que haja uma conexão disponível.
+		<br>
+		<br>
+		Veja os exemplos abaixo:
+		<p class=hidden0 onclick=atualizaQualificaAtividade(0)>Qualificar Atividade</p>
+		<p class=hidden0 onclick=atualizaQualificaEvento()>Qualificar Evento</p>
+
+	</div>
+
+	<div id=interacaoQualifica class='pagina pad10'>		
+	</div>
 
 </div>
 </content>
 
 <footer>
-<div onclick=pp('prog')><i class='fa fa-calendar'></i></div>
-<div onclick=pp('home')><i class='fa fa-home'></i></div>
-<div ><i id=thumbs class='fa fa-thumbs-up'></i></div>
-<div onclick=pp('config')><i class='fa fa-cog'></i></div>
-<div onclick=pp('interacao')><i class='fa fa-pencil-square-o'></i></div>
+<div onclick="pp('prog')"><i class='fa fa-calendar'></i></div>
+<div onclick="pp('informacoes')"><i class='fa fa-info-circle'></i></div>
+<div onclick="pp('ocorrencias')"><i class='fa fa-exclamation-triangle'></i></div>
+<div onclick="pp('interacao')"><i class='fa fa-pencil-square-o'></i></div>
+<div onclick="abreFavoritos()"><i class='fa fa-star'></i></div>
 </footer>
 
-	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-	<script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jQuery/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="js/json.js"></script>
+        <script type="text/javascript" src="js/favoritos.js"></script>
+        <script type="text/javascript" src="js/interacao.js"></script>
+        <script type="text/javascript" src="js/informacoes.js"></script>
+        <script type="text/javascript" src="js/jQuery/jquery-bar-rating-master/jquery.barrating.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
 
-	<script src="js/install.js"></script>
-
-</body>
+    </body>
 </html>

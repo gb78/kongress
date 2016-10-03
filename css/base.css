@@ -1,0 +1,98 @@
+*,*:before,*:after
+{
+  box-sizing: border-box;
+}
+
+.left{float:left;}
+.center{margin:0 auto;}
+.right{float:right;}
+
+.rel{position:relative;}
+.abs{position:absolute;}
+
+.full{width:100%;display:block;clear:both;}
+
+.hidden{display:none;}
+
+.tal{text-align:left;}
+.tac{text-align:center;}
+.tar{text-align:right;}
+.taj{text-align:justify;}
+
+table {width:100%;border-spacing:0;border-collapse:collapse;}
+table,td,th{border:0;padding:5px;}
+table tr th{background:#139;color:#eee; text-align:center;}
+table tr td{border-bottom: 1px solid #bbb;vertical-align:top;}
+
+table tr td:first-child {text-align:right;}
+table tr td:first-child p{float:right;font-size:0.7em;margin:0;}
+table tr td:first-child::first-line{float:right;font-style:normal;font-size:1em}
+
+
+table tr:nth-child(even) {background: #eee}
+table tr:nth-child(odd) {background: #fff}
+
+
+hr{display:block;clear:both;border:1px dashed #ddd;}
+
+.pad5{padding:5px;}
+.pad10{padding:10px;}
+
+.height1{height:1px;}
+
+@keyframes updated {
+   0% {transform: rotate(0deg) ; color:yellow;}
+  10% {transform: rotate( 20deg) ;}
+  20% {transform: rotate(-20deg) ;}
+  30% {transform: rotate( 20deg) ;}
+  40% {transform: rotate(-20deg) ;color:yellow;}
+
+  100% {color:white}
+}
+@-webkit-keyframes updated {
+   0% {-webkit-transform: rotate(0deg) ; color:yellow;}
+  10% {-webkit-transform: rotate( 20deg) ;}
+  20% {-webkit-transform: rotate(-20deg) ;}
+  30% {-webkit-transform: rotate( 20deg) ;}
+  40% {-webkit-transform: rotate(-20deg) ;color:yellow;}
+
+  100% {color:white}
+}
+ 
+.updated{
+	animation:updated 2000ms 10;
+    -webkit-animation:updated 2000ms 10;
+}
+
+
+@keyframes JSONok {
+   0% {color:#000;}
+  50% {color:#0f0}
+  100% {color:#000}
+}
+@-webkit-keyframes JSONok {
+   0% {color:#fff;}
+  50% {color:#0f0}
+  100% {color:#fff}
+}
+ 
+.JSONok{
+	animation:JSONok 1500ms 10;
+    -webkit-animation:JSONok 1500ms 10;
+}
+
+@keyframes JSONerror {
+   0% {color:#000;}
+  50% {color:#f00}
+  100% {color:#000}
+}
+@-webkit-keyframes JSONerror {
+   0% {color:#fff;}
+  50% {color:#f00}
+  100% {color:#fff}
+}
+ 
+.JSONerror{
+	animation:JSONerror 1500ms 5;
+    -webkit-animation:JSONerror 1500ms 5;
+}
